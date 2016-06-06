@@ -1,5 +1,5 @@
 // const TIME0 = Date.now();
-const VERSION = "2.9.0.7";
+const VERSION = "2.9.0.8rc1";
 const SERVICE_CTRID = "@maone.net/noscript-service;1";
 const SERVICE_ID = "{31aec909-8e86-4397-9380-63a59e0c5ff5}";
 const EXTENSION_ID = "{73a6fe31-595d-460b-a920-fcc0f8843232}";
@@ -1009,7 +1009,7 @@ const IOUtil = {
     }
   },
 
-  newChannel(url, originCharset, baseUri, loadingNode, loadingPrincipal, triggeringPrincipal, securityFlags, contentPolicyType) {
+  newChannel: function(url, originCharset, baseUri, loadingNode, loadingPrincipal, triggeringPrincipal, securityFlags, contentPolicyType) {
     return IOS.newChannel ? IOS.newChannel(url, originCharset, baseUri)
       : (this.newChannel = this.newChannel2).apply(this, arguments);
   },
